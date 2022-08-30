@@ -1,6 +1,14 @@
-# Minecraft, with CMake
+# Minecraft
+with CMake, and refactor again
 
-#### Features:
+### Building
+```shell
+mkdir my_build & cd my_build
+cmake .. & make
+./minercraft
+```
+
+### Features:
 - Infinite, procedurally generated world
 - Infinite height/depth
 - Day/night cycle
@@ -13,13 +21,6 @@
 - Distance fog
 - A whole lot of different block types
 - More
-
-#### Building
-```shell
-mkdir my_build & cd my_build
-cmake .. & make
-./minercraft
-```
 
 ---
 
