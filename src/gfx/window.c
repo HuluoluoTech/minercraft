@@ -88,7 +88,7 @@ void window_create(FWindow init, FWindow destroy, FWindow tick,  FWindow update,
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
     window.size = (ivec2s) {{1280, 720}};
-    window.handle = glfwCreateWindow(window.size.x, window.size.y, "Project", NULL, NULL);
+    window.handle = glfwCreateWindow(window.size.x, window.size.y, "MINERCRAFT", NULL, NULL);
     if (window.handle == NULL) {
         fprintf(stderr, "%s",  "error creating window\n");
         glfwTerminate();
@@ -186,6 +186,7 @@ void window_loop() {
     
         _update();
         _render();
+        
         glfwSwapBuffers(window.handle);
         glfwPollEvents();
     }

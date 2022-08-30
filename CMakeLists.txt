@@ -7,7 +7,9 @@ endif ()
 set(PROJECTNAME minercraft)
 project(${PROJECTNAME})
 
+enable_language(C)
 set(CMAKE_C_COMPILER gcc)
+set(CMAKE_C_STANDARD 11)
 
 link_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/libs/
