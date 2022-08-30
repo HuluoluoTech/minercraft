@@ -23,4 +23,4 @@ cmake .. & make
 
 ---
 
-Based on [minercrafe-weekend](https://github.com/jdah/minecraft-weekend.git`)
+Based on [minercrafe-weekend](https://github.com/jdah/minecraft-weekend)
