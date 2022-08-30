@@ -7,14 +7,14 @@ void renderer_init(struct Renderer *self) {
     self->current_shader = SHADER_NONE;
 
     self->shaders[SHADER_BASIC_TEXTURE] = shader_create(
-        "res/shaders/basic_texture.vs", "res/shaders/basic_texture.fs",
+        "../res/shaders/basic_texture.vs", "../res/shaders/basic_texture.fs",
         2, (struct VertexAttr[]) {
             { .index = 0, .name = "position" },
             { .index = 1, .name = "uv" }
         });
 
     self->shaders[SHADER_CHUNK] = shader_create(
-        "res/shaders/chunk.vs", "res/shaders/chunk.fs",
+        "../res/shaders/chunk.vs", "../res/shaders/chunk.fs",
         3, (struct VertexAttr[]) {
             { .index = 0, .name = "position" },
             { .index = 1, .name = "uv" },
@@ -22,30 +22,30 @@ void renderer_init(struct Renderer *self) {
         });
 
     self->shaders[SHADER_SKY] = shader_create(
-        "res/shaders/sky.vs", "res/shaders/sky.fs",
+        "../res/shaders/sky.vs", "../res/shaders/sky.fs",
         2, (struct VertexAttr[]) {
             { .index = 0, .name = "position" },
             { .index = 1, .name = "uv" }
         });
 
     self->shaders[SHADER_BASIC_COLOR] = shader_create(
-        "res/shaders/basic_color.vs", "res/shaders/basic_color.fs",
+        "../res/shaders/basic_color.vs", "../res/shaders/basic_color.fs",
         1, (struct VertexAttr[]) {
             { .index = 0, .name = "position" }
         });
 
 
     self->block_atlas = blockatlas_create(
-        "res/images/blocks.png",
+        "../res/images/blocks.png",
         (ivec2s) {{ 16, 16 }}
     );
 
-    self->textures[TEXTURE_CROSSHAIR] = texture_create_from_path("res/images/crosshair.png");
-    self->textures[TEXTURE_CLOUDS] = texture_create_from_path("res/images/clouds.png"); 
-    self->textures[TEXTURE_STAR] = texture_create_from_path("res/images/star.png");
-    self->textures[TEXTURE_SUN] = texture_create_from_path("res/images/sun.png");
-    self->textures[TEXTURE_MOON] = texture_create_from_path("res/images/moon.png");
-    self->textures[TEXTURE_HOTBAR] = texture_create_from_path("res/images/hotbar.png");
+    self->textures[TEXTURE_CROSSHAIR] = texture_create_from_path("../res/images/crosshair.png");
+    self->textures[TEXTURE_CLOUDS] = texture_create_from_path("../res/images/clouds.png"); 
+    self->textures[TEXTURE_STAR] = texture_create_from_path("../res/images/star.png");
+    self->textures[TEXTURE_SUN] = texture_create_from_path("../res/images/sun.png");
+    self->textures[TEXTURE_MOON] = texture_create_from_path("../res/images/moon.png");
+    self->textures[TEXTURE_HOTBAR] = texture_create_from_path("../res/images/hotbar.png");
 
     self->vao = vao_create();
     self->vbo = vbo_create(GL_ARRAY_BUFFER, true);

@@ -10,8 +10,8 @@ project(${PROJECTNAME})
 set(CMAKE_C_COMPILER gcc)
 
 link_directories(
-	${CMAKE_CURRENT_SOURCE_DIR}/lib/
-	${CMAKE_CURRENT_SOURCE_DIR}/lib/noise
+	${CMAKE_CURRENT_SOURCE_DIR}/libs/
+	${CMAKE_CURRENT_SOURCE_DIR}/libs/cglm
 )
 
 file(GLOB_RECURSE DIR_SRCS
@@ -31,9 +31,8 @@ add_executable(${PROJECTNAME} ${DIR_SRCS})
 # include header path
 target_include_directories(${PROJECTNAME} PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/>
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/lib/>
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/lib/cglm/include/>
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/lib/noise/>
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libs/>
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libs/cglm/include/>
 )
 
 # Link libs
@@ -42,4 +41,5 @@ target_link_libraries(${PROJECTNAME} -lpthread)
 target_link_libraries(${PROJECTNAME} -ldl)
 target_link_libraries(${PROJECTNAME} -lGL)
 target_link_libraries(${PROJECTNAME} -lm)
-target_link_libraries(${PROJECTNAME} -lnoise)
+target_link_libraries(${PROJECTNAME} -lcglm)
+
