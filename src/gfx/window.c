@@ -22,6 +22,11 @@ static void _cursor_callback(GLFWwindow *handle, double xp, double yp) {
 }
 
 static void _key_callback(GLFWwindow *handle, int key, int scancode, int action, int mods) {
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(handle, true);
+        return;
+    }
+
     if (key < 0) {
         return;
     }

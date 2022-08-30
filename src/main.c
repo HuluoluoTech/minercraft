@@ -5,7 +5,7 @@
 #include "block/block.h"
 
 // TODO: remove these
-#include "world/light.h"
+// #include "world/light.h"
 
 // global state
 struct State state;
@@ -106,7 +106,16 @@ void render() {
     renderer_pop_camera(&state.renderer);
 }
 
+/**
+ * @brief Main Entry Point
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char *argv[]) {
     window_create(init, destroy, tick, update, render);
     window_loop();
+
+    exit(EXIT_SUCCESS);
 }
