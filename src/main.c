@@ -87,10 +87,14 @@ void update() {
         state.renderer.flags.wireframe = !state.renderer.flags.wireframe;
     }
 
-    // mouse toggle (ESC)
-    if (state.window->keyboard.keys[GLFW_KEY_ESCAPE].pressed) {
+    // mouse toggle (ESC) -> Ctrl + Alt
+    if(state.window->keyboard.keys[GLFW_KEY_LEFT_CONTROL].pressed ) {
         mouse_set_grabbed(!mouse_get_grabbed());
     }
+
+    // if (state.window->keyboard.keys[GLFW_KEY_ESCAPE].pressed) {
+    //     mouse_set_grabbed(!mouse_get_grabbed());
+    // }
 }
 
 void render() {
